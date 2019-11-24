@@ -1,0 +1,17 @@
+{
+  "name": "btc-txid",
+  "version": "1.0.0",
+  "description": "telegram bot to check btc tx's",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kinoth",
+  "license": "MIT",
+  "dependencies": {
+    "blockchain.info": "^2.12.1",
+    "nodemon": "^1.19.4",
+    "telebot": "^1.2.6"
+  }
+}
