@@ -10,7 +10,7 @@
   "author": "kinoth",
   "license": "MIT",
   "dependencies": {
-    "blockchain.info": "^2.12.1",
+    "bitcoin-core": "^3.0.0",
     "nodemon": "^1.19.4",
     "telebot": "^1.2.6"
   }
