@@ -1,0 +1,39 @@
+{
+  "name": "bitcoin-butler",
+  "version": "1.0.0",
+  "description": "A telegram bot that notifies when your transaction has reaced n numbers of confirmation's written in NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "eslint": "./node_modules/.bin/eslint **/*.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "telebot": "^1.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "nodemon": "^2.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kinothUI/bitcoin-butler.git"
+  },
+  "keywords": [
+    "bot",
+    "bitcoin",
+    "bitcoin butler",
+    "telegram",
+    "telegram bot",
+    "telegram bitcoin bot",
+    "transaction",
+    "bitcoin transaction",
+    "bitcoin transaction bot"
+  ],
+  "author": "kinothUI <crypt0@runbox.at>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kinothUI/bitcoin-butler/issues"
+  },
+  "homepage": "https://github.com/kinothUI/bitcoin-butler"
+}
