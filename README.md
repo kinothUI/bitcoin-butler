@@ -3,6 +3,8 @@
 A telegram bot that notifies when your bitcoin transaction has reached _n_ numbers of confirmation's, written in [NodeJS](https://nodejs.org/).
 The bot works with your own [bitcoin-core node](https://bitcoincore.org/en/download/)
 
+[![Build Status](https://travis-ci.com/kinothUI/bitcoin-butler.svg?branch=master)](https://travis-ci.com/kinothUI/bitcoin-butler)
+
 #### Getting Started
 
 1. Register a new Bot in Telegram [@BotFather](https://t.me/BotFather) and save the token
