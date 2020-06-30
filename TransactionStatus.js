@@ -16,7 +16,7 @@ class TransactionStatus {
 
   async get(txid) {
     this.confCount = await callBtcNode(config, txid).then(
-      (res) => (config.useFullnode ? res.data.result.confirmations : res.data.confirmations),
+      (res) => res.data.result.confirmations,
       (err) => err
     );
     if (!this.confCount) this.confCount = 0;

@@ -7,17 +7,12 @@ module.exports = {
       params: new Array(txid, true),
     };
 
-    const options = config.useFullnode
-      ? {
-          url: `http://${config.rpcUser}:${config.rpcPass}@${config.btcNodeAddress}:${config.rpcPort}`,
-          method: "POST",
-          headers: { "content-type": "text/plain;" },
-          data,
-        }
-      : {
-          url: `${config.endpoint}/${txid}`,
-          method: "GET",
-        };
+    const options = {
+      url: `http://${config.rpcUser}:${config.rpcPass}@${config.btcNodeAddress}:${config.rpcPort}`,
+      method: "POST",
+      headers: { "content-type": "text/plain;" },
+      data,
+    };
 
     return axios.request(options).then(
       (response) => response,

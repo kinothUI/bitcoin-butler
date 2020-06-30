@@ -18,6 +18,12 @@ bot.on(["/start"], (msg) =>
 );
 
 bot.on(watchRegExp, async (msg, props) => {
+  console.log("--------------------- MSG INCOMING ---------------------");
+  console.log(new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" }));
+  console.log("--------------------------------------------------------");
+  console.log(msg.text);
+  console.log("------------------------ MSG END -----------------------");
+
   const txid = props.match[1];
   const threshold = props.match[2];
   const label = props.match[3];
