@@ -1,6 +1,6 @@
 const TransactionStatus = require("./TransactionStatus");
 const Telebot = require("telebot");
-const { token } = require("./config.js");
+const { token, nodeAppVersion } = require("./config");
 
 const bot = new Telebot({
   token,
@@ -13,7 +13,7 @@ const watchRegExp = /^\/watch ([a-z0-9]{64}) ([0-9]*) ?(.*)$/;
 
 bot.on(["/start"], (msg) =>
   msg.reply.text(
-    "Hi there 👋\nI am your bitcoin butler💂‍♂️\nHonored to monitor your bitcoin transaction🙏🏼\n\nHit me with /watch <txid> <n of confirmations> <optional label> and I'll get back to you as soon as your confirmation-level is reached!"
+    "Hi there 👋\nI am your bitcoin butler💂‍♂️\nHonored to monitor your bitcoin transaction🙏🏼\n\nUsage:\n/watch <txid> <n of confirmations> <optional label>\nGet notified when your bitcoin transaction reached n of confirmations\n/commit\nGet the current git commit the bot is running. Compare with https://github.com/kinothUI/bitcoin-butler to see if my maintainer did something suspicious"
   )
 );
 
@@ -75,5 +75,11 @@ bot.on(watchRegExp, async (msg, props) => {
     }
   }, 30000);
 });
+
+bot.on("/commit", (msg) =>
+  msg.reply.text(
+    `Bot is running on commit ${nodeAppVersion}\nhttps://github.com/kinothUI/bitcoin-butler`
+  )
+);
 
 bot.start();

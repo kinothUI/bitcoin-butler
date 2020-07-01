@@ -4,11 +4,13 @@
   "description": "A telegram bot that notifies when your transaction has reaced n numbers of confirmation's written in NodeJS",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "NODE_APP_VERSION=$(git describe --tags --always)$(git diff --exit-code --quiet || echo --dirty) nodemon src/index.js",
+    "prod": "NODE_APP_VERSION=$(git describe --tags --always)$(git diff --exit-code --quiet || echo --dirty) node src/index.js",
     "eslint": "./node_modules/.bin/eslint **/*.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "telebot": "^1.4.1"
   },
   "devDependencies": {
