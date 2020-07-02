@@ -9,7 +9,7 @@ const bot = new Telebot({
   },
 });
 
-const watchRegExp = /^\/watch ([a-z0-9]{64}) ([0-9]*) ?(.*)$/;
+const watchRegExp = /^\/watch ([a-z0-9]{64}) ?([0-9]*) ?(.*)$/;
 
 bot.on(["/start"], (msg) =>
   msg.reply.text(
@@ -31,7 +31,7 @@ bot.on(watchRegExp, async (msg, props) => {
   if (!threshold)
     return bot.sendMessage(
       msg.from.id,
-      "Excuse me!\nI am not sure when to get back to you. Please specify a confirmation-threshold!"
+      "Excuse me!\nI am not sure when to get back to you. Please specify a confirmation-threshold like /watch <txid> 5\nIn that way, you'll get notified when your transaction hit 5 confirmations."
     );
   else if (threshold == 0)
     return msg.reply.text("ಠ_ಥ\n\nSir, really? Zero confirmations?", { asReply: true });
