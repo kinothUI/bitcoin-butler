@@ -18,12 +18,6 @@ bot.on(["/start"], (msg) =>
 );
 
 bot.on(watchRegExp, async (msg, props) => {
-  console.log("--------------------- MSG INCOMING ---------------------");
-  console.log(new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" }));
-  console.log("--------------------------------------------------------");
-  console.log(msg.text);
-  console.log("------------------------ MSG END -----------------------");
-
   const txid = props.match[1];
   const threshold = props.match[2];
   const label = props.match[3];
@@ -31,7 +25,7 @@ bot.on(watchRegExp, async (msg, props) => {
   if (!threshold)
     return bot.sendMessage(
       msg.from.id,
-      "Excuse me!\nI am not sure when to get back to you. Please specify a confirmation-threshold like /watch <txid> 5\nIn that way, you'll get notified when your transaction hit 5 confirmations."
+      "Excuse me!\nI am not sure when to get back to you. Please specify a confirmation-threshold like /watch <txid> 5\nIn that way, you'll get notified when your transaction hits 5 confirmations."
     );
   else if (threshold == 0)
     return msg.reply.text("ಠ_ಥ\n\nSir, really? Zero confirmations?", { asReply: true });
